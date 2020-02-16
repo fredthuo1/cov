@@ -1,0 +1,27 @@
+.mainBody {
+	padding: 25px;
+}
+
+.link {
+	background: transparent;
+    border: none !important;
+	color: white;
+}
+
+.cil-address-book:hover {
+	color:blue;font-weight:bold;
+}
+
+.cil-envelope-letter:hover {
+	color:blue;font-weight:bold;
+}
+
+.cil-contact:hover {
+	color:blue;font-weight:bold;
+}
+
+.cil-spreadsheet:hover {
+	color:blue;font-weight:bold;
+}
+
+
