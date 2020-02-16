@@ -1,7 +1,7 @@
 {
   "name": "cov",
   "version": "0.1.0",
-  "engines" {
+  "engines": {
 	"node": "10.16.3"
  },
   "private": true,
