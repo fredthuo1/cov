@@ -32,6 +32,13 @@ class ContactsManagement extends Component {
 		return (
 			<React.Fragment >
 				<div className="mainBody">
+				<div class="sidebar">
+					<a href="/PeopleList"> People List </a>
+					<a href="/AddPerson"> Add Member </a>
+					<a href="/Birthdays"> Birthdays </a>
+					<a href="/MemberAnalysis"> Member Analysis </a>
+					<a href="/Mail"> Mail </a>
+				</div>
 				<Row >
 					  <Col >
 						<Card className="text-white bg-info">

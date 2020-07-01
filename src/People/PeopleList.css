@@ -5,3 +5,11 @@
 	position: relative;
 	padding-bottom: 20px;
 }
+.table {
+	margin-top: 0px;
+	width: 100%;
+	border-radius: 10px;
+}
+.peopleList {
+	padding-top: 50px;
+}

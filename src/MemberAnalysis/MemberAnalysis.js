@@ -21,7 +21,7 @@ class MemberAnalysis extends Component {
     handleSubmit(event) {
 		 event.preventDefault();
          alert('Role: ' + this.state.memberType);
-		 this.setState({ memberType: this.state.value })
+		 this.setState({ memberType: this.state.value });
 	     event.preventDefault();
 		 
 		

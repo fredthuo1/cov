@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import axios from 'axios';
+import { SideMenu } from 'react-sidemenu';
 import "./Profile.css";
+
 
 
 class Profile extends Component {
@@ -11,14 +13,14 @@ class Profile extends Component {
 			this.state = {	
 				person: '',
 				id: '',
-				address: '',
+				addresses: [],
 				isLoaded: false,
 			};
 			this.componentDidMount = this.componentDidMount.bind(this);
-		}
+	}
 
 	componentDidMount() {
-		axios.get('http://localhost:8080/getUser', {
+		axios.get('http://localhost:8080/getPerson', {
 		params: {
 			id: this.props.location.state.id
 		}
@@ -26,48 +28,52 @@ class Profile extends Component {
 		.then( res => {
 			this.setState({ 
 			person: res.data,
-			address: res.data.address
+			addresses: res.data.addresses
 			})
 		})
 	}
 
 	render () {
 	const person = this.state.person;
-	const address = this.state.person.oldAddress;
-
-	if(!this.state.address) {
-		return(<div>Loading...</div>);
-	} else {
 	
 		return(
 			<React.Fragment className="profile">
-				<Table responsive>
-					<thead>
+			<div class="sidenav">
+			  <a href="/Profile">Profile</a>
+			  <a href="/Giving">Giving</a>
+			  <a href="/Events">Events</a>
+			  <a href="/Groups">Groups</a>
+			</div>
+
+		<div class="container">
+			<div class="avatar-flip">
+				<img src="https://www.kindpng.com/picc/m/105-1055656_account-user-profile-avatar-avatar-user-profile-icon.png" height="150" width="150" />
+				<img src="https://www.kindpng.com/picc/m/105-1055656_account-user-profile-avatar-avatar-user-profile-icon.png" height="150" width="150"/>
+			</div>
+			<h2>{ person.firstName } { person.middleName }. { person.lastName }</h2>
+			<h4>{ person.memberType }</h4>
+			<p>{ person.active }</p>
+			<p>{ person.cellPhone }</p>
+			<p>{ person.emailAddress }</p>
+			<p>{ person.birthDate }</p> 
+			<p>{ person.dateJoined }</p>
+			<p>{ person.maritalStatus }</p>
+			<p>
+					{ this.state.addresses.map( address =>
 						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Member Type</th>
-							<th>Address</th>
+						  <p><td>{ address.street }</td></p>
+						  <p><td>{ address.city }</td></p>
+						   <p><td>{ address.state }</td></p>
+						   <p><td>{ address.zipCode }</td></p>
+						   <p><td>{ address.country }</td></p>
 						</tr>
-					</thead>
-					<tbody> 
-						<tr>
-							<td>{ person.firstName }</td>
-							<td>{ person.lastName }</td>
-							<td>{ person.memberType }</td>
-							<td><p>{ address.addressId }</p>
-								<p>{ address.street }</p>
-								<p>{ address.city } {''}
-								{ address.state },{' '}
-								{ address.zipCode }</p>
-							</td>
-							<td></td>
-						</tr>
-					</tbody>
-				</Table>
-			</React.Fragment>
+					)}
+			</p>
+		</div> 
+
+		</React.Fragment>
 		)
-	}
+	
 	}
 }
 export default Profile;

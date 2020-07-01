@@ -15,6 +15,8 @@ class PeopleList extends Component {
 			people: [],
 			person: '',
 			id:'',
+			groups:[],
+			addresses:[]
 		};
 		this.handleClick = this.handleClick.bind(this);
 		this.viewProfile = this.viewProfile.bind(this);
@@ -25,8 +27,10 @@ class PeopleList extends Component {
 		axios.get( 'http://localhost:8080/contacts' )
 		.then( res => {
 			this.setState({ people: res.data })
+			this.setState({ addresses: res.data.addresses })
 		});
 	}
+
 
 	handleClick() {
 		history.goBack()
@@ -46,15 +50,16 @@ class PeopleList extends Component {
 		return (
 			<div className="peopleList">
 				<div className="buttons">
-				<Link to="/App"><Button onClick={ this.handleClick }>Add User</Button></Link>
+				<Link to="/AddPerson"><Button onClick={ this.handleClick }>Add Person</Button></Link>
 				</div>
-				<Table hover bordered striped responsive size="lg">
+				<Table className="table" hover bordered striped responsive size="lg">
                   <thead>
                   <tr>
 					 <th>ID</th>
 					 <th>First Name</th>
 					 <th>Last Name</th>
 					 <th>Member Type</th>
+					 <th>Address</th>
                   </tr>
                   </thead>
                   <tbody>

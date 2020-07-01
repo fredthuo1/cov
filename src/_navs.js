@@ -1,8 +1,12 @@
 export default {
 	items: [
 		{
-			name: 'App',
-			url: '/App',
+			name: 'Dashboard',
+			url: '/Home',
+		},
+		{
+			name: 'Finance',
+			url: 'Finances',
 		},
 		{
 			name: 'Contacts',
@@ -17,12 +21,16 @@ export default {
 			url: '/AccountsManagement',
 		},
 		{
-			name: 'Financials',
-			url: 'FinancialsManagement',
-		},
-		{
 			name: 'System',
 			url: 'SystemManagementPage',
+		},
+		{
+			name: 'Register',
+			url: 'SignUp'
+		},
+		{
+			name: 'Login',
+			url: 'Login'
 		}
 	],
 };

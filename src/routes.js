@@ -15,8 +15,6 @@ import Country from './SystemManagement/Country/Country';
 import Locale from './SystemManagement/Locale';
 import SermonTime from './SystemManagement/SermonTime/SermonTime';
 import SermonProgramItems from './SystemManagement/SermonProgramItems/SermonProgramItems';
-import Organization from './SystemManagement/Staffing/Organizations/Organization';
-import AddOrganization from './SystemManagement/Staffing/Organizations/AddOrganization';
 import Department from './SystemManagement/Staffing/Departments/Department';
 import EmployeeCategory from './SystemManagement/Staffing/EmployeeCategory/EmployeeCategory';
 import Positions from './SystemManagement/Staffing/Positions/Positions';
@@ -29,6 +27,27 @@ import PaymentCategory from './SystemManagement/Finances/PaymentCategory/Payment
 import GroupEventDescriptions from './SystemManagement/Programs/GroupEventDescriptions/GroupEventDescriptions';
 import MemberTypes from './SystemManagement/Programs/MemberTypes/MemberTypes';
 import Pastors from './SystemManagement/Staffing/Pastors/Pastors';
+import Groups from './Groups/Groups';
+import Events from './Profile/Events';
+import Giving from './Profile/Giving';
+import AddGroup from './Groups/AddGroup';
+import Login from './register/Login';
+import SignUp from './register/SignUp';
+import Home from './Home/Home';
+import NavBar from './Nav/NavBar';
+import AddPerson from './AddPerson/AddPerson';
+import AttendanceGraph from './Data/AttendanceGraph/AttendanceGraph';
+import EventsGraph from './Data/EventsGraph/EventsGraph';
+import ExpendituresGraph from './Data/ExpendituresGraph/ExpendituresGraph';
+import FinanceGraph from './Data/FinanceGraph/FinanceGraph';
+import IncomeGraph from './Data/IncomeGraph/IncomeGraph';
+import Finances from './Finance/Finances/Finances';
+import Donations from './Finance/Donations/Donations';
+import Expenditures from './Finance/Expenditures/Expenditures';
+import Pledges from './Finance/Pledges/Pledges';
+import SetPassword from './register/SetPassword';
+
+
 
 const routes = [
 	{ path: '/', exact: true, name: 'App', component: App },
@@ -64,10 +83,6 @@ const routes = [
 	component: SermonTime },
 	{ path: '/SermonProgramItems', exact: false, name: 'SermonProgramItems', 
 	component: SermonProgramItems },
-	{ path: '/Organization', exact: false, name: 'Organization', 
-	component: Organization },
-	{ path: '/AddOrganization', exact: false, name: 'AddOrganization', 
-	component: AddOrganization },
 	{ path: '/Pastors', exact: false, name: 'Pastors', 
 	component: Pastors },
 	{ path: '/Department', exact: false, name: 'Department', 
@@ -94,6 +109,44 @@ const routes = [
 	component: MemberTypes },
 	{ path: '/Pastors', exact: false, name: 'Pastors', 
 	component: Pastors },
+	{ path: '/Groups', exact: false, name: 'Groups',
+	component: Groups },
+	{ path: '/Events', exact: false, name: 'Events',
+	component: Events },
+	{ path: '/Giving', exact: false, name: 'Giving',
+	component: Giving },
+	{ path: '/AddGroup', exact: false, name: 'AddGroup',
+	component: AddGroup },
+	{ path: '/Login', exact: false, name: 'Login',
+	component: Login },
+	{ path: '/SignUp', exact: false, name: 'SignUp',
+	component: SignUp },
+	{ path: '/Home', exact: false, name: 'Home',
+	component: Home },
+	{ path: '/NavBar', exact: false, name: 'NavBar',
+	component: NavBar },
+	{ path: '/AddPerson', exact: false, name: 'AddPerson',
+	component: AddPerson },
+	{ path: '/AttendanceGraph', exact: false, name: 'AttendanceGraph',
+	component: AttendanceGraph },
+	{ path: '/EventsGraph', exact: false, name: 'EventsGraph',
+	component: EventsGraph },
+	{ path: '/ExpendituresGraph', exact: false, name: 'ExpendituresGraph',
+	component: ExpendituresGraph },
+	{ path: '/FinanceGraph', exact: false, name: 'FinanceGraph',
+	component: FinanceGraph },
+	{ path: '/IncomeGraph', exact: false, name: 'IncomeGraph',
+	component: IncomeGraph },
+	{ path: '/Finances', exact: false, name: 'Finances',
+	component: Finances },
+	{ path: '/Donations', exact: false, name: 'Donations',
+	component: Donations },
+	{ path: '/Expenditures', exact: false, name: 'Expenditures',
+	component: Expenditures },
+	{ path: '/Pledges', exact: false, name: 'Pledges',
+	component: Pledges },
+	{ path: '/SetPassword', exact: false, name: 'SetPassword',
+	component: SetPassword }
 ];
 
 export default routes;

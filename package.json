@@ -2,14 +2,22 @@
   "name": "cov",
   "version": "0.1.0",
   "engines": {
-	"node": "10.16.3",
-	"npm": "4.6.1"
- },
+    "node": "10.16.3",
+    "npm": "4.6.1"
+  },
   "private": true,
   "dependencies": {
+    "@coreui/react": "^2.5.8",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
+    "query-string": "^5.1.1",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.1",
+    "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "0.9.5",
+    "react-sidemenu": "^1.1.0",
     "reactstrap": "^8.4.0"
   },
   "devDependencies": {},

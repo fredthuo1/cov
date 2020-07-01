@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { Redirect, Switch, Route, BrowserRouter as Router, router, Link  } from "react-router-dom";
 import Home from '../Home/Home';
-import './Layout.css';
+import NavBar from '../Nav/NavBar';
 import { AppHeader, AppSidebar,
 		AppSidebarHeader, AppSidebarForm, AppSidebarNav2 as AppSidebarNav,
 		AppSidebarFooter, AppSidebarMinimizer,
@@ -10,6 +10,7 @@ import { AppHeader, AppSidebar,
 } from '@coreui/react';
 import navigation from '../_navs';
 import routes from '../routes';
+import './Layout.css';
 
 class Layout extends Component {
 
@@ -18,25 +19,18 @@ class Layout extends Component {
 	render() {
 		return (
 		<Router>
+				<NavBar />
 				<div clasName="app">
-					<AppHeader fixed>  
-					<Suspense>
-						<Home />
-					</Suspense>
-					</AppHeader>
-
 					<AppSidebar fixed display="lg">
 						<AppSidebarHeader />
 						<AppSidebarForm />
 						<Suspense>
-					    <AppSidebarNav navConfig={navigation} {...this.props} router={router} />
 						</Suspense>
 						<AppSidebarFooter />
 						<AppSidebarMinimizer />
 					</AppSidebar>
 					<div>
 					<main className="main">
-						<AppBreadcrumb appRoutes={routes} router={router}/>
 						<div >
 						  <Suspense fallback={this.loading()}>
 							<Switch>
@@ -57,12 +51,6 @@ class Layout extends Component {
 						</div>
 					  </main>
 					  </div>
-					<AppAside fixed>
-						
-					  </AppAside>
-					<AppFooter>
-          
-					</AppFooter>
 				</div>
 		</Router>
 		)
